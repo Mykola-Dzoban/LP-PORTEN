@@ -103,6 +103,22 @@ h2{
     font-family: 'Post No Bills Jaffna SemiBold', sans-serif;
     color: #ffffff;
 }
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
+.nav-link{
+    transition: 0.7s ease;
+}
 
 /*first screen*/
 .starter {
@@ -718,6 +734,41 @@ footer{
     p{
         font-size: 10px;
     }
+    li>a:hover{
+        padding: 20px 60px;
+    }
+    .hamburger{
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu{
+        position: fixed;
+        left:-100%;
+        top: 100px;
+        gap:0;
+        flex-direction: column;
+        background-color: #0f0f0f;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .nav-item{
+        margin: 16px 0;
+    }
+    .nav-menu.active{
+        left:0;
+    }
+    body.noscroll{
+        overflow: hidden;
+    }
     .image-wrapper{
         margin-top: 20px;
         gap: 25px;
@@ -858,16 +909,13 @@ footer{
         font-size: 22px;
     }
     ul {
-        font-size: 8px;  
+        font-size: 14px;  
     }
     ul>a>img{
         padding: 0 8px;
     }
     li>a{
         padding: 0 8px;
-    }
-    li>a:hover{
-        padding: 35px 10px;
     }
     .logo {
         width: 246px;
@@ -1020,7 +1068,7 @@ footer{
         font-size: 14px;
     }
     ul {
-        font-size: 8px;  
+        font-size: 12px;  
     }
     ul>a>img{
         padding: 0 4px;
@@ -1032,9 +1080,6 @@ footer{
     }
     li>a{
         padding: 0 4px;
-    }
-    li>a:hover{
-        padding: 35px 10px;
     }
     .logo {
         width: 159px;
